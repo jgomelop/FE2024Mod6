@@ -49,7 +49,9 @@ public class SeatServiceImpl implements ISeat{
     @Override
     public void unavaibleSeat(Long seatid) {
         Seat seat = seatRepository.findById(seatid).orElse(null);
-        SeatStatus status = seatStatusRepository.findById(Long.parseLong("2")).orElse(null);
+        //SeatStatus status = seatStatusRepository.findById(Long.parseLong("2")).orElse(null);
+        SeatStatus status = new SeatStatus();
+        status.setStatus(SeatStatus.Status.OCCUPIED);
         seat.setSeatStatus(status);
         seatRepository.save(seat);
     }

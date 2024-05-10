@@ -14,7 +14,7 @@ public class SeatStatus {
     @Enumerated(EnumType.STRING)
     private Status status;
     @JsonIgnore
-    @OneToMany(cascade=CascadeType.PERSIST, mappedBy="seatStatus")
+    @OneToMany(cascade=CascadeType.ALL, mappedBy="seatStatus")
     private List<Seat> seats;
 
     public SeatStatus() {

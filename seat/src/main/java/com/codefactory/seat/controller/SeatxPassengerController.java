@@ -1,6 +1,8 @@
 package com.codefactory.seat.controller;
 
+import com.codefactory.seat.repository.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,24 +17,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/api/seatPassenger")
 public class SeatxPassengerController {
 
+    //@Qualifier("ISeatxPassenger")
     @Autowired
     ISeatxPassenger seatxPassenger;
 
     @Autowired
     ISeat seatService;
 
-    @RequestMapping(value = "/generateSeatPassenger", method = RequestMethod.POST)
-    Iterable<SeatxPassenger> generateSeatxPassenger(){
-        return seatxPassenger.createSeatxPassenger();
-    }
+
+//    @RequestMapping(value = "/generateSeatPassenger", method = RequestMethod.POST)
+//    Iterable<SeatxPassenger> generateSeatxPassenger(){
+//        return seatxPassenger.createSeatxPassenger();
+//    }
 
     @RequestMapping(value = "/setSeat", method=RequestMethod.POST)
-    public String AssingSeat(@RequestParam String passenger, 
+    public String AssingSeat(@RequestParam String passenger,
                             @RequestParam String seat) {
-        seatService.unavaibleSeat(Long.parseLong(seat));
+        //seatService.unavaibleSeat(Long.parseLong(seat));
         return seatxPassenger.assingSeat(Long.parseLong(passenger), Long.parseLong(seat));
-        
-        
     }
     
 }

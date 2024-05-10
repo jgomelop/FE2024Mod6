@@ -39,9 +39,12 @@ public class SeatxPassengerImpl implements ISeatxPassenger{
 
     @Override
     public String assingSeat(Long id, Long seatId) {
-        SeatxPassenger seatxPassenger = seatxPassengerRepository.findById(id).orElse(null);
+        // pass = seatxPassengerRepository.findById(id).orElse(null);
         Seat seat = seatRepository.findById(seatId).orElse(null);
-        seatxPassenger.setSeat(seat);
+        Passenger passenger = passengerRepository.findById(id).orElse(null);
+
+        SeatxPassenger seatxPassenger = new SeatxPassenger(passenger, seat);
+        //seatxPassenger.setSeat(seat);
         seatxPassengerRepository.save(seatxPassenger);
         return seatxPassenger.toString();
     }

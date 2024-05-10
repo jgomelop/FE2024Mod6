@@ -24,10 +24,10 @@ public class Flight {
     private Long id;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "flight", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
     private List<Seat> seatList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "flight", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
     private List<Booking> bookingList;
     
 

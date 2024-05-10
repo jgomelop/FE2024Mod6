@@ -16,7 +16,7 @@ public class SeatLocation {
     private Location location;
 
     @JsonIgnore
-    @OneToMany(cascade=CascadeType.PERSIST, mappedBy="seatLocation")
+    @OneToMany(cascade=CascadeType.ALL, mappedBy="seatLocation")
     private List<Seat> seats;
 
     public SeatLocation() {

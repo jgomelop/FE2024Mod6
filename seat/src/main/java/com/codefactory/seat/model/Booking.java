@@ -20,10 +20,10 @@ public class Booking {
     @SequenceGenerator(name = "SEQ", sequenceName = "BOOKING_SEQ", allocationSize = 1)
     Long id;
 
-    @OneToMany(mappedBy = "booking", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
     private List<Passenger> passengerList = new ArrayList<>();
 
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "id_flight")
     private Flight flight;
 }

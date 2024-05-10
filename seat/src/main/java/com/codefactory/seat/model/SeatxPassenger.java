@@ -28,7 +28,8 @@ public class SeatxPassenger {
     public SeatxPassenger(Passenger passenger) {
         this.passenger = passenger;
     }
-
-    
-    
+    public SeatxPassenger(Passenger passenger, Seat seat){
+        this.passenger = passenger;
+        this.seat = seat;
+    }
 }

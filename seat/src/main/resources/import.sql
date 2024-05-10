@@ -12,9 +12,9 @@ INSERT INTO booking(id, id_flight) VALUES (1569, 1);
 INSERT INTO booking(id, id_flight) VALUES (9876, 1);
 
 
-INSERT INTO passenger(id,id_booking, name) VALUES (1, 1569, "Pablo");
-INSERT INTO passenger(id, id_booking, name) VALUES (2, 1569, "Jader");
-INSERT INTO passenger(id, name) VALUES (3, "Isaac");
-INSERT INTO passenger(id, name) VALUES (4, "Daniel");
-INSERT INTO passenger(id, name) VALUES (5, "Alejandra");
-INSERT INTO passenger(id, id_booking,name) VALUES (6, 9876,"Andres");
+INSERT INTO passenger(id,id_booking, name) VALUES (1, 1569, 'Pablo');
+INSERT INTO passenger(id, id_booking, name) VALUES (2, 1569, 'Jader');
+INSERT INTO passenger(id,id_booking, name) VALUES (3, 2345, 'Isaac');
+INSERT INTO passenger(id,id_booking, name) VALUES (4, 2345, 'Daniel');
+INSERT INTO passenger(id,id_booking, name) VALUES (5, 2345, 'Alejandra');
+INSERT INTO passenger(id, id_booking,name) VALUES (6, 9876,'Andres');

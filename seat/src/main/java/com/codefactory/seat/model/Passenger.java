@@ -18,11 +18,11 @@ public class Passenger {
     @SequenceGenerator(name = "SEQ", sequenceName = "PASSENGER_SEQ", allocationSize = 1)
     Long id;
 
-    @ManyToOne(cascade=CascadeType.PERSIST)
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "id_booking")
     private Booking booking;
 
-    @OneToOne(mappedBy = "passenger", cascade = CascadeType.PERSIST)
+    @OneToOne(mappedBy = "passenger", cascade = CascadeType.ALL)
     private SeatxPassenger seatxPassenger;
 
     private String name;

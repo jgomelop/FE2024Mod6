@@ -16,7 +16,7 @@ public class SeatClass {
     private Type type;
 
     @JsonIgnore
-    @OneToMany(cascade=CascadeType.PERSIST, mappedBy="seatClass")
+    @OneToMany(cascade=CascadeType.ALL, mappedBy="seatClass")
     private List<Seat> seats;
 
     public SeatClass() {
